@@ -1,7 +1,7 @@
--- Update the key and date using the provided function
-return function(updateFunction)
-    local newKey = "new_key"
+-- Function to update the key and date via GUI
+local function updateKeyAndDateGUI()
+    local newKey = textBox.Text
     local newDate = "2023-12-31"  -- Replace with the desired new date
     
-    updateFunction(newKey, newDate)
+    updateKeyAndDate(newKey, newDate)
 end
