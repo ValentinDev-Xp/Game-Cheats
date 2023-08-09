@@ -1,7 +1,4 @@
--- Function to update the key and date via GUI
-local function updateKeyAndDateGUI()
-    local newKey = textBox.Text
-    local newDate = "2023-12-31"  -- Replace with the desired new date
-    
-    updateKeyAndDate(newKey, newDate)
-end
+return {
+    keyExpiration = os.time{year=2023, month=8, day=31},
+    whitelistedKeys = {"CHAVE1", "CHAVE2", "CHAVE3"}
+}
