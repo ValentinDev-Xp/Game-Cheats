@@ -1,12 +1,13 @@
 -- Sistema para verificar a validade da chave e se o jogador é autorizado
-local keysData = {
-    keyExpiration = os.time{year=2023, month=8, day=31},
+return {
     whitelistedKeys = {
-        {key = "key1", playerId = 12345678, maxUses = 1, uses = 0}, -- Apenas o jogador com o UserId 12345678 pode usar
-        {key = "CHAVE2", playerId = 87654321, maxUses = 3, uses = 0}, -- Apenas o jogador com o UserId 87654321 pode usar
-        {key = "CHAVE3", playerId = 11223344, maxUses = 10, uses = 0} -- Apenas o jogador com o UserId 11223344 pode usar
+        {key = "key1", playerId = 12345678, maxUses = 1, expiration = os.time{year=2024, month=12, day=31}},
+        {key = "CHAVE2", playerId = 87654321, maxUses = 3, expiration = os.time{year=2025, month=1, day=15}},
+        {key = "CHAVE3", playerId = 11223344, maxUses = 10, expiration = os.time{year=2025, month=2, day=28}}
     }
 }
+
+
 
 local function canPlayerUseKey(player, key)
     local playerId = player.UserId
